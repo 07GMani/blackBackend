@@ -5,9 +5,9 @@ class PriorityQueue {
 
     enqueue(patient) {
         this.queue.push(patient)
-        this.queue.post((a, b) => {
-            if (a.triageLvl !== b.triageLvl) return a.triageLvl - b - triageLvl;
-            return new Date(a.arrivalTime) - new date(b.arrivalTime)
+        this.queue.sort((a, b) => {
+            if (a.triageLvl !== b.triageLvl) return a.triageLvl - b.triageLvl;
+            return new Date(a.arrivalTime) - new Date(b.arrivalTime)
         });
     }
 

@@ -5,5 +5,8 @@ const { initSocket } = require("./sockets/queueSocket")
 const server = http.createServer(app)
 initSocket(server)
 
-server.listen(3000, () => console.log('Server is active on PORT 3000'));
+const PORT = 3000;
+server.listen(PORT, () => {
+    console.log(`Server is active on PORT ${PORT}`);
+});
 
